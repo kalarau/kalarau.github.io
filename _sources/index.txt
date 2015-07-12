@@ -1,0 +1,30 @@
+.. Kalarau documentation master file, created by
+   sphinx-quickstart on Fri Jul 10 17:02:15 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Dokumentasi Open API Kalarau.
+===================================
+
+Selamat datang di laman dokumentasi api. Kalarau .net adalah sebuah situs yang
+saya kelola untuk menyimpan beberapa hasil dari kegiatan saya bereksperimen dan
+mencoba-coba hal baru. Bisa dikatakan, situs ini adalah portfolio digital saya.
+
+Jika anda tertarik dengan apa yg sudah saya kerjakan, dan ingin melakukan kerja-sama.
+Anda dapat mengontak saya di **me** [at] `widnyana.web.id
+<http://widnyana.web.id>`_, saya akan dengan senang hati
+berdiskusi dengan anda.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   kodepos
+
+
+Indices and tables
+==================
+
+* `http-routingtable
+  <http-routingtable.html>`_.

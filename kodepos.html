@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Api Kodepos Indonesia &mdash; dokumentasi Kalarau 1.0.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="dokumentasi Kalarau 1.0.0" href="index.html"/>
+        <link rel="prev" title="Dokumentasi Open API Kalarau." href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Kalarau
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Api Kodepos Indonesia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#detail-kodepos">Detail Kodepos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#daftar-kodepos">Daftar Kodepos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#berdasar-provinsi">Berdasar Provinsi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#berdasar-kabupaten">Berdasar Kabupaten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#berdasar-kecamatan">Berdasar Kecamatan</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pencarian-kodepos">Pencarian Kodepos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#management-kodepos">Management Kodepos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tambahkan-kodepos">Tambahkan Kodepos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-kodepos">Update Kodepos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Kalarau</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Api Kodepos Indonesia</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/kodepos.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="api-kodepos-indonesia">
+<span id="rst-primer"></span><h1>Api Kodepos Indonesia<a class="headerlink" href="#api-kodepos-indonesia" title="Link permanen untuk headline ini">¶</a></h1>
+<p>Kalarau.net menyediakan listing data untuk kodepos yang ada di Indonesia,
+mungkin belum lengkap maka dari itu jika anda berkenan untuk berkontribusi, saya
+menyediakan endpoint khusus untuk menambahkan data tersebut.</p>
+<div class="admonition note">
+<p class="first admonition-title">Catatan</p>
+<p class="last">Seluruh Endpoint yang didefinisikan pada laman ini mengacu pada base-url
+<cite>http://kalarau.net/api/v1/</cite></p>
+</div>
+<div class="section" id="detail-kodepos">
+<h2>Detail Kodepos<a class="headerlink" href="#detail-kodepos" title="Link permanen untuk headline ini">¶</a></h2>
+<dl class="get">
+<dt id="get--kodepos-(int-kodepos)">
+<code class="descname">GET </code><code class="descname">/kodepos/</code><span class="sig-paren">(</span><em class="property">int: </em><em>kodepos</em><span class="sig-paren">)</span><a class="headerlink" href="#get--kodepos-(int-kodepos)" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memberikan detail informasi terhadap kodepos yang diberikan</p>
+<p><strong>Contoh Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>GET /kodepos/17145
+Host: kalarau.net
+</pre></div>
+</div>
+<p><strong>Contoh response</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">1285</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;17145&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Jawa Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Jaka Sampurna&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="daftar-kodepos">
+<h2>Daftar Kodepos<a class="headerlink" href="#daftar-kodepos" title="Link permanen untuk headline ini">¶</a></h2>
+<p>Berikut adalah daftar <em>endpoint</em> untuk melihat daftar kodepos, diurutkan berdasarkan
+tingkat Pemerintahan daerah.</p>
+<div class="section" id="berdasar-provinsi">
+<h3>Berdasar Provinsi<a class="headerlink" href="#berdasar-provinsi" title="Link permanen untuk headline ini">¶</a></h3>
+<dl class="get">
+<dt id="get--kodepos-prov-(str-nama provinsi)">
+<code class="descname">GET </code><code class="descname">/kodepos/prov/(str:nama provinsi)</code><a class="headerlink" href="#get--kodepos-prov-(str-nama provinsi)" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memberikan daftar kodepos berdasarkan Nama Provinsi.</p>
+<p><strong>Contoh Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>GET /kodepos/prov/jawa%20barat
+Host: kalarau.net
+</pre></div>
+</div>
+<p><strong>Contoh Response</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">700</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;16110&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Jawa Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Bogor&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Cigombong&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Ciadeg&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">701</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;16110&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Jawa Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Bogor&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Cigombong&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Ciburayut&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;pagination&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">5934</span><span class="p">,</span>
+            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;total_pages&quot;</span><span class="p">:</span> <span class="mi">297</span><span class="p">,</span>
+            <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://kalarau.net/api/v1/kodepos/prov/jawa%20barat/?page=2&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="berdasar-kabupaten">
+<h3>Berdasar Kabupaten<a class="headerlink" href="#berdasar-kabupaten" title="Link permanen untuk headline ini">¶</a></h3>
+<dl class="get">
+<dt id="get--kodepos-kab-(str-nama kabupaten)">
+<code class="descname">GET </code><code class="descname">/kodepos/kab/(str:nama kabupaten)</code><a class="headerlink" href="#get--kodepos-kab-(str-nama kabupaten)" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memberikan daftar kodepos berdasarkan Nama Kabupaten.</p>
+<p><strong>Contoh Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>GET /kodepos/kab/gorontalo
+Host: kalarau.net
+</pre></div>
+</div>
+<p><strong>Contoh Response</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">71799</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;96123&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Tilango&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Dulomo&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">71806</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;96127&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Pulubala&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Ayumolingo&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;pagination&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">205</span><span class="p">,</span>
+            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;total_pages&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+            <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://kalarau.net/api/v1/kodepos/kab/gorontalo/?page=2&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="berdasar-kecamatan">
+<h3>Berdasar Kecamatan<a class="headerlink" href="#berdasar-kecamatan" title="Link permanen untuk headline ini">¶</a></h3>
+<dl class="get">
+<dt id="get--kodepos-kecamatan-(str-nama kecamatan)">
+<code class="descname">GET </code><code class="descname">/kodepos/kecamatan/(str:nama kecamatan)</code><a class="headerlink" href="#get--kodepos-kecamatan-(str-nama kecamatan)" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memberikan daftar kodepos berdasarkan Nama Kecamatan.</p>
+<p><strong>Contoh Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>GET /kodepos/kecamatan/tilango
+Host: kalarau.net
+</pre></div>
+</div>
+<p><strong>Contoh Response</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">71799</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;96123&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Tilango&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Dulomo&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">71856</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;96181&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="s2">&quot;Gorontalo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Tilango&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Ilotideaa&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;pagination&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="nt">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;total_pages&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="pencarian-kodepos">
+<h2>Pencarian Kodepos<a class="headerlink" href="#pencarian-kodepos" title="Link permanen untuk headline ini">¶</a></h2>
+<dl class="get">
+<dt id="get--kodepos-search">
+<code class="descname">GET </code><code class="descname">/kodepos/search</code><a class="headerlink" href="#get--kodepos-search" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memberikan daftar kodepos yang mirip dengan kata kunci pencarian.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>q</strong> (<em>string</em>) &#8211; kata kunci pencarian</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contoh Request</strong></p>
+<div class="highlight-http"><div class="highlight"><pre>GET /kodepos/search?q=bekasi
+Host: kalarau.net
+</pre></div>
+</div>
+<p><strong>Contoh Response</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">1261</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;17111&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Jawa Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi Timur&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Aren Jaya&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">1262</span><span class="p">,</span>
+            <span class="nt">&quot;kodepos&quot;</span><span class="p">:</span> <span class="s2">&quot;17111&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;provinsi&quot;</span><span class="p">:</span> <span class="s2">&quot;Jawa Barat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kabupaten&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;kota&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kecamatan&quot;</span><span class="p">:</span> <span class="s2">&quot;Bekasi Timur&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;kelurahan&quot;</span><span class="p">:</span> <span class="s2">&quot;Duren Jaya&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;pagination&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">243</span><span class="p">,</span>
+            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="nt">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;total_pages&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+            <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://kalarau.net/api/v1/kodepos/search/?q=bekasi&amp;page=2&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="management-kodepos">
+<h2>Management Kodepos<a class="headerlink" href="#management-kodepos" title="Link permanen untuk headline ini">¶</a></h2>
+<p>Anda dapat berkontribusi dalam melengkapi data kodepos ini, silakan gunakan
+endpoint ini untuk mengoreksi, dan endpoint ini untuk menambahkan data baru.</p>
+<div class="section" id="tambahkan-kodepos">
+<h3>Tambahkan Kodepos<a class="headerlink" href="#tambahkan-kodepos" title="Link permanen untuk headline ini">¶</a></h3>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Peringatan</p>
+<p class="last">belum diimplementasikan</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="update-kodepos">
+<h3>Update Kodepos<a class="headerlink" href="#update-kodepos" title="Link permanen untuk headline ini">¶</a></h3>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Peringatan</p>
+<p class="last">belum diimplementasikan</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Dokumentasi Open API Kalarau." accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Widnyana Putra.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

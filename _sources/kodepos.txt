@@ -1,0 +1,287 @@
+.. highlightlang:: http
+
+.. _rst-primer:
+
+Api Kodepos Indonesia
+=====================
+
+Kalarau.net menyediakan listing data untuk kodepos yang ada di Indonesia,
+mungkin belum lengkap maka dari itu jika anda berkenan untuk berkontribusi, saya
+menyediakan endpoint khusus untuk menambahkan data tersebut.
+
+
+.. note::
+
+   Seluruh Endpoint yang didefinisikan pada laman ini mengacu pada base-url
+   `http://kalarau.net/api/v1/`
+
+
+Detail Kodepos
+--------------
+
+..  http:get:: /kodepos/(int:kodepos)
+
+    Memberikan detail informasi terhadap kodepos yang diberikan
+
+    **Contoh Request**
+
+    .. sourcecode:: http
+
+      GET /kodepos/17145
+      Host: kalarau.net
+
+    **Contoh response**
+
+    .. sourcecode:: json
+
+      {
+          "kodepos": [
+              {
+                  "_id": 1285,
+                  "kodepos": "17145",
+                  "provinsi": "Jawa Barat",
+                  "kabupaten": null,
+                  "kota": "Bekasi",
+                  "kecamatan": "Bekasi Barat",
+                  "kelurahan": "Jaka Sampurna"
+              }
+          ]
+      }
+
+Daftar Kodepos
+--------------
+
+Berikut adalah daftar *endpoint* untuk melihat daftar kodepos, diurutkan berdasarkan
+tingkat Pemerintahan daerah.
+
+
+Berdasar Provinsi
+_________________
+
+.. http:get:: /kodepos/prov/(str:nama provinsi)
+
+  Memberikan daftar kodepos berdasarkan Nama Provinsi.
+
+  **Contoh Request**
+
+  .. sourcecode:: http
+
+    GET /kodepos/prov/jawa%20barat
+    Host: kalarau.net
+
+  **Contoh Response**
+
+  .. sourcecode:: json
+
+    {
+        "provinsi": [
+            {
+                "_id": 700,
+                "kodepos": "16110",
+                "provinsi": "Jawa Barat",
+                "kabupaten": "Bogor",
+                "kota": null,
+                "kecamatan": "Cigombong",
+                "kelurahan": "Ciadeg"
+            },
+            {
+                "_id": 701,
+                "kodepos": "16110",
+                "provinsi": "Jawa Barat",
+                "kabupaten": "Bogor",
+                "kota": null,
+                "kecamatan": "Cigombong",
+                "kelurahan": "Ciburayut"
+            }
+        ],
+        "meta": {
+            "pagination": {
+                "total": 5934,
+                "count": 20,
+                "per_page": 20,
+                "current_page": 1,
+                "total_pages": 297,
+                "links": {
+                    "next": "http://kalarau.net/api/v1/kodepos/prov/jawa%20barat/?page=2"
+                }
+            }
+        }
+    }
+
+
+
+Berdasar Kabupaten
+__________________
+
+.. http:get:: /kodepos/kab/(str:nama kabupaten)
+
+  Memberikan daftar kodepos berdasarkan Nama Kabupaten.
+
+  **Contoh Request**
+
+  .. sourcecode:: http
+
+    GET /kodepos/kab/gorontalo
+    Host: kalarau.net
+
+  **Contoh Response**
+
+  .. sourcecode:: json
+
+    {
+        "kabupaten": [
+            {
+                "_id": 71799,
+                "kodepos": "96123",
+                "provinsi": "Gorontalo",
+                "kabupaten": "Gorontalo",
+                "kota": null,
+                "kecamatan": "Tilango",
+                "kelurahan": "Dulomo"
+            },
+            {
+                "_id": 71806,
+                "kodepos": "96127",
+                "provinsi": "Gorontalo",
+                "kabupaten": "Gorontalo",
+                "kota": null,
+                "kecamatan": "Pulubala",
+                "kelurahan": "Ayumolingo"
+            }
+        ],
+        "meta": {
+            "pagination": {
+                "total": 205,
+                "count": 20,
+                "per_page": 20,
+                "current_page": 1,
+                "total_pages": 11,
+                "links": {
+                    "next": "http://kalarau.net/api/v1/kodepos/kab/gorontalo/?page=2"
+                }
+            }
+        }
+    }
+
+Berdasar Kecamatan
+__________________
+
+.. http:get:: /kodepos/kecamatan/(str:nama kecamatan)
+
+  Memberikan daftar kodepos berdasarkan Nama Kecamatan.
+
+  **Contoh Request**
+
+  .. sourcecode:: http
+
+    GET /kodepos/kecamatan/tilango
+    Host: kalarau.net
+
+  **Contoh Response**
+
+  .. sourcecode:: json
+
+    {
+        "kecamatan": [
+            {
+                "_id": 71799,
+                "kodepos": "96123",
+                "provinsi": "Gorontalo",
+                "kabupaten": "Gorontalo",
+                "kota": null,
+                "kecamatan": "Tilango",
+                "kelurahan": "Dulomo"
+            },
+            {
+                "_id": 71856,
+                "kodepos": "96181",
+                "provinsi": "Gorontalo",
+                "kabupaten": "Gorontalo",
+                "kota": null,
+                "kecamatan": "Tilango",
+                "kelurahan": "Ilotideaa"
+            }
+        ],
+        "meta": {
+            "pagination": {
+                "total": 8,
+                "count": 8,
+                "per_page": 20,
+                "current_page": 1,
+                "total_pages": 1,
+                "links": []
+            }
+        }
+    }
+
+Pencarian Kodepos
+-----------------
+
+.. http:get:: /kodepos/search
+
+  Memberikan daftar kodepos yang mirip dengan kata kunci pencarian.
+
+
+  :query string q: kata kunci pencarian
+
+  **Contoh Request**
+
+  .. sourcecode:: http
+
+    GET /kodepos/search?q=bekasi
+    Host: kalarau.net
+
+  **Contoh Response**
+
+  .. sourcecode:: json
+
+    {
+        "result": [
+            {
+                "_id": 1261,
+                "kodepos": "17111",
+                "provinsi": "Jawa Barat",
+                "kabupaten": null,
+                "kota": "Bekasi",
+                "kecamatan": "Bekasi Timur",
+                "kelurahan": "Aren Jaya"
+            },
+            {
+                "_id": 1262,
+                "kodepos": "17111",
+                "provinsi": "Jawa Barat",
+                "kabupaten": null,
+                "kota": "Bekasi",
+                "kecamatan": "Bekasi Timur",
+                "kelurahan": "Duren Jaya"
+            }
+        ],
+        "meta": {
+            "pagination": {
+                "total": 243,
+                "count": 20,
+                "per_page": 20,
+                "current_page": 1,
+                "total_pages": 13,
+                "links": {
+                    "next": "http://kalarau.net/api/v1/kodepos/search/?q=bekasi&page=2"
+                }
+            }
+        }
+    }
+
+Management Kodepos
+------------------
+
+Anda dapat berkontribusi dalam melengkapi data kodepos ini, silakan gunakan
+endpoint ini untuk mengoreksi, dan endpoint ini untuk menambahkan data baru.
+
+Tambahkan Kodepos
+_________________
+
+  .. warning:: belum diimplementasikan
+
+Update Kodepos
+______________
+
+  .. warning:: belum diimplementasikan
